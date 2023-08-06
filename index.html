@@ -1,45 +1,257 @@
-﻿<html>
+<!DOCTYPE html>
+<html lang="th">
 	<head>
-		<title>PICZEEAPP</title>
-		<!-- BOOTSTRAP -->
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
-		<link rel="shortcut icon" type="img/icon" href="favicon.ico">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>Teepada</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
 	</head>
 	<body>
-		<div class="container-fluid">
-            <nav class="navbar navbar-expand-sm bg-success navbar-light fixed-top">
-                <img src="favicon.ico" class="navbar-brand" alt="Logo" width="40" /> <span class="text-light navbar-text"><font size="4"><b>PICZEEAPP</b></font></span>
-            </nav>
-            <br/>
-			<div class="container-fluid" style="margin-top:54px;">
-				<div class="pt-1">
-					<font size="5">
-						<b>Welcome to this website!</b>
-					</font>
-					<br>
-					<font size="2" class="pl-3">
-						ยินดีต้อนรับเข้าสู่เว็บไซต์นี้
-					</font>
-				</div>
-				<!--<hr>
-				<div class="container-bg">
-					<div style="padding-left: 4px;">
-						<font size="3">
-							The server can not find the requested resource.
-						</font>
-					</div>
-					<div class="pt-1 pl-3">
-						<font size="1">
-							
-						</font>
-					</div>
-				</div>-->
+		<nav>
+			<table border="0" class="navbar-left">
+				<tr>
+					<td>
+						<img src="./img/profile.jpg" class="profile" />
+					</td>
+					<td>
+						<div style="padding-left: 8px;"></div>
+					</td>
+					<td>
+						<h1 id="rick"></h1>
+					</td>
+				</tr>
+			</table>
+			<div class="navbar-right" style="margin-right: 32px;">
+				<a href="#home">HOME</a>
+				<a href="#about">ABOUT</a>
+				<a href="#skills">SKILLS</a>
+				<a href="#education">EDUCATION</a>
+				<a href="#contacts">CONTACTS</a>
 			</div>
-		</div>
+		</nav>
+		<section id="home">
+			<a href="#">
+				<h1>MY PORTFOLIO</h1>
+			</a>
+		</section> 
+		
+		<section id="about">
+			<div class="about">
+				<table border="0">
+					<tr>
+						<td>
+							<center>
+								<div>
+									<img src="./img/profile.jpg" alt="Teepada Chuenprempree" style="border-radius:999px;" id="bigProfile" />
+								</div>
+								<div>
+									<h3 id="about-myname">
+										
+									</h3>
+								</div>
+							</center>
+						</td>
+						<td>
+							<div style="padding-left: 64px;"></div>
+						</td>
+						<td>
+							<div>
+								<h1>ประวัติส่วนตัว</h1>
+							</div>
+							<div style="margin-left: 64px;">
+								<ul>
+									<li>
+										ชื่อ-นามสกุล: นายทีปดา ชื่นเปรมปรีดิ์
+									</li>
+									<li>
+										ชื่อเล่น: คอปเตอร์
+									</li>
+									<li>
+										วันเกิด: กรกฎาคม 2548 
+									</li>
+									<li>
+										ความถนัด: คอมพิวเตอร์
+									</li>
+								</ul>
+							</div>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</section>
+
+		<section id="skills" style="height: auto; !important">
+			<table border="0">
+				<tr>
+					<td>
+						<center><h1>MY SKILLS</h1></center>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="0">
+							<tr>
+								<td>
+									<center>
+										<h3>ความสามารถทางด้าน Programming 💻</h3>
+										<div><h5>ได้เข้าร่วมการแข่งขันศิลปหัตถกรรมครั้งที่ 70 ในรายการแข่งขัน "การเขียนโปรแกรมคอมพิวเตอร์"</h5></div>
+									</center>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<a href="./img/s4.jpg" target="_blank"><img src="./img/s4.jpg" class="skillphoto" /></a>
+									<a href="./img/s6.jpg" target="_blank"><img src="./img/s6.jpg" class="skillphoto" /></a>
+									<a href="./img/s5.jpg" target="_blank"><img src="./img/s5.jpg" class="skillphoto" /></a>
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="0">
+							<tr>
+								<td>
+									<center>
+										<h3>ความสามารถทางด้าน Network 🌐</h3>
+										<div><h5>ได้เข้าค่าย ITCAMP19 คณะเทคโนโลยีสารสนเทศ สจล. โดยได้เลือกเป็นค่ายย่อย Netawolf</h5></div>
+									</center>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<a href="./img/s1.jpg" target="_blank"><img src="./img/s1.jpg" class="skillphoto" /></a>
+									<a href="./img/s2.jpg" target="_blank"><img src="./img/s2.jpg" class="skillphoto" /></a>
+									<a href="./img/s3.jpg" target="_blank"><img src="./img/s3.jpg" class="skillphoto" /></a>
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+		</section>
+
+		<section id="education">
+			<table border="0">
+				<tr>
+					<td>
+						<center><h1>MY EDUCATION</h1></center>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="0">
+							<tr>
+								<td>
+									<img src="./img/swp.jpg" alt="SWP" class="schoollogo" />
+								</td>
+								<td>
+									<div style="padding-left: 24px;"></div>
+								</td>
+								<td>
+									<h3>
+										โรงเรียนสารสาสน์วิเทศราชพฤกษ์
+									</h3>
+									<div style="margin-left: 16px;">
+										<ul>
+											<li>
+												อนุบาลชั้นปีที่ 1-3
+											</li>
+											<li>
+												ประถมศึกษาปีที่ 1-6
+											</li>
+										</ul>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<img src="https://image.makewebeasy.net/makeweb/m_1920x0/jTu7Jpl5E/Home/HWN_E.png?v=202012190947" alt="HWN" class="schoollogo" />
+								</td>
+								<td>
+									<div style="padding-left: 24px;"></div>
+								</td>
+								<td>
+									<h3>
+										โรงเรียนนวมินทราชินูทิศ หอวัง นนทบุรี
+									</h3>
+									<div style="margin-left: 16px;">
+										<ul>
+											<li>
+												มัธยมศึกษาปีที่ 1-3 
+											</li>
+											<li>
+												มัธยมศึกษาปีที่ 4-6 [GPAX ปัจจุบัน: 3.92]
+											</li>
+										</ul>
+									</div>
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+		</section>
+
+		<section id="contacts">
+			<table border="0">
+				<tr>
+					<td>
+						<center><h1>MY CONTACTS</h1></center>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="0">
+							<tr>
+								<td>
+									<img src="./img/fb.png" alt="Facebook" class="socialmedia" />
+								</td>
+								<td>
+									<div style="padding-left: 16px;"></div>
+								</td>
+								<td>
+									<h3>
+										Facebook: <a href="https://www.facebook.com/copter.chuenprempree.1/" class="sociallink">Copter Chuenprempree</a>
+									</h3>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<img src="./img/ig.jpg" alt="Instagram" class="socialmedia" />
+								</td>
+								<td>
+									<div style="padding-left: 16px;"></div>
+								</td>
+								<td>
+									<h3>
+										Instagram: <a href="https://www.instagram.com/copter4310s/" class="sociallink">copter4310s</a>
+									</h3>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<img src="./img/gmail.png" alt="email" class="socialmedia" />
+								</td>
+								<td>
+									<div style="padding-left: 16px;"></div>
+								</td>
+								<td>
+									<h3>
+										E-Mail: <a href="mailto:nacopter123@gmail.com" class="sociallink">nacopter123@gmail.com</a>
+									</h3>
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>		
+		</section>
+		
+		<footer>
+		<p>&copy; 2023 Teepada Chuenprempree. All rights reserved.</p>
+		</footer>
+		<script src="app.js"></script>
 	</body>
 </html>
