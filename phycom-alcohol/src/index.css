@@ -137,7 +137,7 @@ h2, h3, .title {
 
 .box-rwh {
 	color: black;
-	background-color: rgba(248, 248, 248, 0.5);
+	background-color: rgba(23, 25, 26, 0.5);
 	backdrop-filter: blur(8px);
 	border-radius: 12px;
 	margin-bottom: 8px;
@@ -167,7 +167,7 @@ h2, h3, .title {
 
 #alc-value {
 	line-height: 154px;
-	font-size: 52px;
+	font-size: 48px;
 	font-weight: 700;
 }
 
@@ -210,4 +210,35 @@ h2, h3, .title {
 	left: 50%;
 	transform: translate(-50%, -50%);
 	position: fixed;
+}
+
+.www-50 {
+	width: 50%;
+	min-width: 300px;
+}
+
+.member_list {
+	display: grid;
+	grid-template-columns: 50% 50%;
+}
+
+.member_p {
+	padding: 24px;
+	border-radius: 32px;
+	background-color: rgba(23, 25, 26, 0.5);
+	display: grid;
+	grid-template-columns: 128px calc(100% - 128px);
+	align-items: center;
+	text-decoration: none;
+	word-wrap: break-word;
+}
+
+.member_p > img {
+	width: 128px;
+}
+
+@media screen and (max-width: 700px) {
+	.member_list {
+		grid-template-columns: 100%;
+	}
 }

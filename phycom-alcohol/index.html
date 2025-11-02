@@ -9,8 +9,8 @@
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 		<link href="src/index.css" rel="stylesheet" />
 	</head>
-	<body onload="getAlcValue()">
-		<nav class="navbar position-fixed w-100 bg-primary bg-gradient">
+	<body onload="getAlcValue(); getAlcStats()">
+		<nav class="navbar position-fixed w-100 bg-success bg-gradient">
 			<div class="container-fluid">
 				<span class="navbar-brand fs-4">
 					<img src="src/beer_128.png" alt="Logo" width="36" class="d-inline-block align-text-center">
@@ -18,7 +18,7 @@
 				</span>
 				<ul class="navbar-nav me-auto">
 					<li class="nav-item">
-						<span class="text-light">Home</span>
+						<span class="text-light"></span>
 					</li>
 				</ul>
 			</div>
@@ -34,63 +34,18 @@
 				<div class="mt-3">
 					<div class="i-full-grid">
 						<div class="box-rwh text-center mx-1">
-							<div class="mt-2">
-								<span id="alc-text" class="title i-alc fw-bold text-success">
-									ปริมาณที่วัดได้
-								</span>
-							</div>
-							<div class="mt-3">
-								<div class="i-center" onclick="alert('กดปุ่มวัดค่าที่ Arduino แล้วค่าจะปรากฎขึ้นมาเอง')">
-									<div id="alc-back" class="gr-back bg-gradient bg-success"></div>
-									<div id="alc-front" class="gr-front bg-gradient bg-dark">
-										<span id="alc-value" class="text-white">
-											0
-										</span><br>
-										<span class="text-secondary i-unit">
-											mg.%
-										</span>
-									</div>
-								</div>
-							</div>
-							<div class="mt-5 mx-4">
-								สามารถกดปุ่มวัดค่าได้ที่ Arduino เพื่อทำการวัดปริมาณแอลกอฮอล์
-								จากนั้นค่าจะถูกแสดงผลขึ้นมาตรงนี้อัตโนมัติ
-							</div>
-							<div class="mt-2 text-secondary fs-smaller">
-								ผลการวัดล่าสุดเมื่อ 
-								<span id="alc-time">
-									Oct 29, 2025 @23:21 น.
-								</span>
-							</div>
+							<img src="src/board.jpg" class="w-100" />
 						</div>
 						<div class="box-rwh text-center mx-1" style="display: grid; place-items: center;">
 							<div class="container-fluid">
 								<div class="mt-2">
-									<span class="title i-alc fw-bold">
-										🎮เล่นเกมกันมั้ย?
+									<img src="src/beer_128.png" alt="Logo" width="36" class="d-inline-block align-text-center mx-1">
+									<span class="title i-alc fw-bold text-light">
+										Phycom Alcohol
 									</span>
 								</div>
-								<div class="mt-3">
-									<div>
-										<a href="game/hardest/" class="btn btn-lg btn-dark bg-gradient w-75 py-4">
-											<div class="mb-2 fs-smaller text-secondary">
-												<< Game 1 >>
-											</div>
-											<div class="rainbow fw-bold">
-												ใครคอแข็งกว่ากัน 😉
-											</div>
-										</a>
-									</div>
-									<div class="mt-3 mb-2">
-										<a href="game/wheel/" class="btn btn-lg btn-dark bg-gradient w-75 py-4">
-											<div class="mb-2 fs-smaller text-secondary">
-												<< Game 2 >>
-											</div>
-											<div class="fw-bold">
-												วงล้อ วงเหล้า 🍻
-											</div>
-										</a>
-									</div>
+								<div class="mt-3 mx-4 text-light">
+									เพื่อตรวจวัดปริมาณแอลกอฮอล์จากลมหายใจ ช่วยประเมินระดับแอลกอฮอล์ว่าเกินตามที่กฎหมายกำหนดหรือไม่ สำหรับผู้ที่ชื่นชอบในการดื่มเครื่องดิ่มแอลกอฮอล์ และจำเป็นจะต้องขับรถหลังจากดื่มเสร็จ สิ่งที่ใช้รับค่าคือการเป่าลมหายใจ และจะทำการประมวลผลเพื่อบอกว่าสามารถขับขี่ได้หรือไม่
 								</div>
 							</div>
 						</div>
@@ -100,24 +55,187 @@
 		</div>
 		<div class="container-fluid my-3">
 			<div class="container-md mt-4">
-				<h2 class="text-primary">
-					เมาไม่ขับ หลับไม่ตื่น ฟื้นไม่มี...
+				<h2 class="text-success">
+					รายละเอียดโปรเจกต์
 				</h2>
-				<div>
-					<span class="px-3"></span><b>เคยหรือเปล่า?</b> อยากกินเครื่องดื่มแอลกอฮอล์แต่ก็ไม่อยากให้เมาเกินไปหรือเกินที่กฎหมายกำหนด
-					แต่จะทำยังไงได้ละ เพราะไม่มีเครื่องมือที่ใช้วัดหรือไม่ก็ราคาอาจจะแพงเกินไป!
-				</div>
-				<div>
-					<span class="px-3"></span><b>แต่!!!</b> สิ่งนี้ไม่ใช่แค่เครื่องวัดธรรมดา แต่ยังสามารถใช้คู่กับเว็บไซต์นี้ได้โดยมีเกมวงเหล้าให้เล่นอีกด้วย!
-					สามารถสนุกกับเพื่อน ๆ ในวงเหล้าได้อย่างไม่มีขีดจำกัดเลยยยยย
+				<div class="member_list mx-2">
+					<div class="m-2">
+						<a href="src/phycomalcohol.png" target="_blank">
+							<img src="src/phycomalcohol.png" class="rounded w-100" />
+						</a>
+					</div>
+					<div class="m-2">
+						<a href="src/project.jpg" target="_blank">
+							<img src="src/project.jpg" class="rounded w-100" />
+						</a>
+					</div>
 				</div>
 				<hr>
-				<h2 class="text-primary">
-					สมาชิกผู้จัดทำ
+				<h2 class="text-success">
+					อุปกรณ์ที่ใช้
+				</h2>
+				<div class="member_list mx-2">
+					<div class="member_p my-2 mx-1 bg-gradient">
+						<img src="src/mq3.jpg" class="rounded-circle" />
+						<div class="mx-3">
+							<h3 class="text-success">
+								MQ3 Alcohol
+							</h3>
+							<span>
+								เซนเซอร์ที่ใช้วัดปริมาณแก๊สแอลกอฮอล์ที่อยู่ในอากาศ
+							</span>
+						</div>
+					</div>
+					<div class="member_p my-2 mx-1 bg-gradient">
+						<img src="src/display.jpg" class="rounded-circle" />
+						<div class="mx-3">
+							<h3 class="text-success">
+								Liquid Crystal
+							</h3>
+							<span>
+								หน้าจอที่ใช้แสดงผลค่าออกมาจากการวัด
+							</span>
+						</div>
+					</div>
+					<div class="member_p my-2 mx-1 bg-gradient">
+						<img src="src/led.jpg" class="rounded-circle" />
+						<div class="mx-3">
+							<h3 class="text-success">
+								RGB LED
+							</h3>
+							<span>
+								หลอดไฟ LED ที่ใช้แสดงผลสีตามปริมาณแอลกอฮอล์
+							</span>
+						</div>
+					</div>
+					<div class="member_p my-2 mx-1 bg-gradient">
+						<img src="src/arduino.jpg" class="rounded-circle" />
+						<div class="mx-3">
+							<h3 class="text-success">
+								Arduino R4 WiFi
+							</h3>
+							<span>
+								บอร์ด Arduino ที่ใช้ในการทำโปรเจกต์
+							</span>
+						</div>
+					</div>
+				</div>
+				<hr>
+				<h2 class="text-success mt-2">
+					การแสดงผล
 				</h2>
 				<div>
-					<div>
-						Hello
+					<span class="mx-3"></span>- ถ้าค่าปริมาณแอลกอฮอล์ต่ำกว่า 30 mg.% จะแสดงสีเขียว
+				</div>
+				<div>
+					<span class="mx-3"></span>- ถ้าค่าปริมาณแอลกอฮอล์ตั้งแต่ 30 แล้วไม่เกิน 50 mg.% จะแสดงสีเหลือง
+				</div>
+				<div>
+					<span class="mx-3"></span>- ถ้าค่าปริมาณแอลกอฮอล์ตั้งแต่ 50 mg.% ขึ้นไป จะแสดงสีแดง
+				</div>
+				<div style="display: grid; grid-template-columns: 33% 33% 33%" class="mt-2">
+					<div class="m-2">
+						<img src="src/ar_green.jpg" class="w-100 rounded" />
+					</div>
+					<div class="m-2">
+						<img src="src/ar_yellow.jpg" class="w-100 rounded" />
+					</div>
+					<div class="m-2">
+						<img src="src/ar_red.jpg" class="w-100 rounded" />
+					</div>
+				</div>
+				<h2 class="text-success mt-2">
+					หลักการเชื่อมต่อ
+				</h2>
+				<div>
+					<span class="mx-3"></span>ใช้ ArduinoHttpClient เพื่อให้ Arduino สามารถทำ Request ไปหาเว็บเซิร์ฟเวอร์ได้ แล้วตัวเว็บเซิร์ฟเวอร์จะทำการเก็บค่าลงในฐานข้อมูลเพื่อนำไปใช้ต่อ
+				</div>
+				<div class="m-4">
+					<img src="src/flow.png" class="w-100 rounded" />
+				</div>
+				<div class="member_list mx-2 mt-2">
+					<a class="member_p my-2 mx-1 bg-success bg-gradient " href="https://github.com/copter4310s/phycom-alcohol" target="_blank">
+						<img src="https://www.pngall.com/wp-content/uploads/13/Github-Logo-PNG-Photo.png" class="bg-white rounded-circle" />
+						<div class="mx-3">
+							<h3 class="text-dark">
+								Source Code
+							</h3>
+							<span class="text-light">
+								copter4310s/phycom-alcohol
+							</span>
+						</div>
+					</a>
+					<a class="member_p my-2 mx-1 bg-primary bg-gradient " href="https://www2.it.kmitl.ac.th/~it67070057/project/PhycomAlchohol/" target="_blank">
+						<img src="src/beer_128.png" class="bg-white rounded-circle" />
+						<div class="mx-3">
+							<h3 class="text-dark">
+								Project Website
+							</h3>
+							<span class="text-light">
+								https://www2.it.kmitl.ac.th//~it67070057/project/PhycomAlchohol/
+							</span>
+						</div>
+					</a>
+					<a class="member_p my-2 mx-1 bg-danger bg-gradient " href="" target="_blank">
+						<img src="https://icon-library.com/images/youtube-app-icon-transparent/youtube-app-icon-transparent-25.jpg" class="bg-white rounded-circle" />
+						<div class="mx-3">
+							<h3 class="text-dark">
+								Presentation Video
+							</h3>
+							<span class="text-light">
+								เมาไม่ขับ หลับไม่ตื่น ฟื้นไม่มี
+							</span>
+						</div>
+					</a>
+				</div>
+				<hr>
+				<h2 class="text-success">
+					สมาชิกผู้จัดทำ
+				</h2>
+				<div class="member_list mx-2">
+					<div class="member_p my-2 mx-1 bg-gradient">
+						<img src="src/67070057.jpg" class="rounded-circle" />
+						<div class="mx-3">
+							<h3 class="text-success">
+								นายทีปดา ชื่นเปรมปรีด์
+							</h3>
+							<span>
+								รหัสนักศึกษา 67070057
+							</span>
+						</div>
+					</div>
+					<div class="member_p my-2 mx-1 bg-gradient">
+						<img src="src/67070062.jpg" class="rounded-circle" />
+						<div class="mx-3">
+							<h3 class="text-success">
+								นายธนชาติ แซ่อ้วง
+							</h3>
+							<span>
+								รหัสนักศึกษา 67070062
+							</span>
+						</div>
+					</div>
+					<div class="member_p my-2 mx-1 bg-gradient">
+						<img src="src/67070073.jpg" class="rounded-circle" />
+						<div class="mx-3">
+							<h3 class="text-success">
+								นายธรรมรัตน์ พิริยะพงษธร
+							</h3>
+							<span>
+								รหัสนักศึกษา 67070073
+							</span>
+						</div>
+					</div>
+					<div class="member_p my-2 mx-1 bg-gradient">
+						<img src="src/67070156.jpg" class="rounded-circle" />
+						<div class="mx-3">
+							<h3 class="text-success">
+								นายวรวัส เทียมทัด
+							</h3>
+							<span>
+								รหัสนักศึกษา 67070156
+							</span>
+						</div>
 					</div>
 				</div>
 				<p class="fs-smaller text-secondary text-center mt-4">

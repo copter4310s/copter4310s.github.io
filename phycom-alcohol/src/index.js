@@ -3,6 +3,7 @@ const alc_front = document.getElementById("alc-front")
 const alc_back = document.getElementById("alc-back")
 const alc_value = document.getElementById("alc-value")
 const alc_time = document.getElementById("alc-time")
+const t10_body = document.getElementById("t10_body")
 
 let lastValue = 0
 let lastDate = ""
@@ -25,10 +26,10 @@ function setAlcValue(value, time) {
 	alc_back.classList.remove("bg-warning")
 	alc_back.classList.remove("bg-danger")
 	
-	if (value < 45) {
+	if (value < 30) {
 		alc_text.classList.add("text-success")
 		alc_back.classList.add("bg-success")
-	} else if (value >= 45 && value < 50) {
+	} else if (value >= 30 && value < 50) {
 		alc_text.classList.add("text-warning")
 		alc_back.classList.add("bg-warning")
 	} else {
@@ -47,4 +48,27 @@ async function getAlcValue() {
 	setAlcValue(Number(val_return[0]), val_return[1])
 	
 	setTimeout(getAlcValue, 2100)
+}
+
+async function getAlcStats() {
+	let val_fetch = await fetch("value.php?t=stats")
+	let val_return = await val_fetch.json()
+	let returnddd = ""
+	
+	for (let i = 0; i < val_return.length; i++) {
+		returnddd += "<tr>\
+								<th scope=\"col\">\
+									" + val_return[i][0] + "\
+								</th>\
+								<td>\
+									" + val_return[i][1] + "\
+								</th>\
+								<td scope=\"col\">\
+									" + val_return[i][2] + "\
+								</th>\
+							</tr>"
+	}
+	
+	t10_body.innerHTML = returnddd
+	setTimeout(getAlcValue, 11000)
 }
